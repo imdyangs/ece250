@@ -143,8 +143,10 @@ int main()
     cout << "The length of this list is: " << length << endl << endl;
 
     firstList.print();
+    cout << endl;
     int end = firstList.find(2);
     int dne = firstList.find(134513);
     int first = firstList.find(13);
     int mid = firstList.find(4);
+    int again = firstList.find(2);
 }
