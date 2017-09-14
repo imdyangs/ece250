@@ -9,17 +9,21 @@ class Node
         Node *next;
 
     public:
+        Node();
+        ~Node();
         void setValue(int val);
         void setNext(Node* node);
         int getValue();
         Node* getNext();
         void print();
-        Node();
 };
+
 
 Node::Node(void){
     this->next = 0;
 }
+
+Node::~Node(){}
 
 void Node::setValue(int val)
 {
@@ -54,11 +58,11 @@ class List
         int length;
 
     public:
+        List();
         void insert(int val);
         void print();
         int getLength();
         int find(int val);
-        List();
 };
 
 List::List()
@@ -103,16 +107,17 @@ int List::find(int val){
         {
             if (traversalPtr->getValue() == val)
             {
+                cout << "Found: " << val << " at position " << position << endl;
                 return position;
             }
             position++;
             traversalPtr = traversalPtr->getNext();
         }
-        throw "NotFound";
+        throw val;
     }
-    catch (string e)
+    catch (int e)
     {
-        cout << e << endl;
+        cout << "Throwing error. Cannot find: " << e << endl;
     }
 }
 
@@ -132,11 +137,14 @@ int main()
     firstList.insert(2);
     firstList.insert(3);
     firstList.insert(4);
+    firstList.insert(13);
     
     int length = firstList.getLength();
     cout << "The length of this list is: " << length << endl << endl;
 
     firstList.print();
-    int position = firstList.find(2);
-    cout << position << endl;
+    int end = firstList.find(2);
+    int dne = firstList.find(134513);
+    int first = firstList.find(13);
+    int mid = firstList.find(4);
 }
