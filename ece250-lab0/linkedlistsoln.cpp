@@ -12,9 +12,9 @@ class Node
         Node();
         ~Node();
         void setValue(int val);
-        void setNext(Node* node);
+        void setNext(Node *node);
         int getValue();
-        Node* getNext();
+        Node *getNext();
         void print();
 };
 
@@ -31,7 +31,7 @@ void Node::setValue(int val)
     cout << "Set value of node as: " << val << endl;
 }
 
-void Node::setNext(Node* node)
+void Node::setNext(Node *node)
 {
     this->next = node;
 }
@@ -74,7 +74,7 @@ List::List()
 
 // adds element to beginning of list
 void List::insert(int val) {
-    Node* newHead = new Node();
+    Node *newHead = new Node();
     newHead->setValue(val);
     if (length == 0)
     {
@@ -99,7 +99,7 @@ int List::getLength()
 
 int List::find(int val){
     int position = 1;
-    Node* traversalPtr = new Node();
+    Node *traversalPtr = new Node();
     traversalPtr = head;
     try
     {
@@ -122,7 +122,7 @@ int List::find(int val){
 }
 
 void List::print(){
-    Node* traversalPtr = new Node();
+    Node *traversalPtr = new Node();
     traversalPtr = head;
     while(traversalPtr != 0)
     {
